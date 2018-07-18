@@ -12,6 +12,9 @@ def get_item_data(item_name):
     cursor.execute("SELECT * FROM products WHERE name=?", (item_name,))
     try:
         item_data = list(cursor.fetchall()[0])
+        # Formats the item data from the SQLite database file to be more readable.
+        item_data[2] = "$" + format(item_data[2], ".2f")
+        item_data[3] += ".jpeg"
     except IndexError:
         item_data = []
     cursor.close()

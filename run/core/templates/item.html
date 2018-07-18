@@ -11,9 +11,12 @@
 </head>
 
 <body>
-    <h1>Item</h1>
-    <h2>{{ name }}</h2>
-    <p>{{ price }}</p>
-    <p>{{ picture }}</p>
+    <div style="text-align: center;">
+        <h1>Item</h1>
+        <h2>{{ name }}</h2>
+        <p>{{ price }}</p>
+        <img src="{{ url_for('static', filename=picture) }}" alt="" width="250" height="250">
+        <p><b>Source:</b> {{ picture }}</p>
+    </div>
 </body>
 </html>
