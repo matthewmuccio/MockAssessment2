@@ -90,8 +90,11 @@
             <div class="col-lg-9">
 
                 <div class="card mt-4">
-                    <!--<img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">-->
-                    <img class="item-img" src="{{ url_for('static', filename=picture)}}" alt="" width="300" height="300">
+                    <div style="background-color: #dedede;">
+                        <center>
+                            <img class="item-img" src="{{ url_for('static', filename=picture)}}" alt="" width="400" height="400">
+                        </center>
+                    </div>
                     <div class="card-body">
                         <h3 class="card-title">{{ name }}</h3>
                         <h4>{{ price }}</h4>
