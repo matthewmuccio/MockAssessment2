@@ -1,13 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Mock Assessment 2 - Item Not Found</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mock Assessment 2 - {{ name }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 
 <body>
-    <div class="center">
-        <h1>Item Not Found</h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="">Mock Assessment 2</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://www.matthewmuccio.com" target="_blank">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://www.github.com/matthewmuccio/MockAssessment2" target="_blank">Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="my-4">Matt's Bikes</h1>
+                <div class="list-group">
+                    {% if name == "bicycle" %}
+                    <a href="/bicycle" class="list-group-item active">Bicycle</a>
+                    {% else %}
+                    <a href="/bicycle" class="list-group-item">Bicycle</a>
+                    {% endif %}
+
+                    {% if name == "bicycle1" %}
+                    <a href="/bicycle1" class="list-group-item active">Bicycle 1</a>
+                    {% else %}
+                    <a href="/bicycle1" class="list-group-item">Bicycle 1</a>
+                    {% endif %}
+
+                    {% if name == "bicycle2" %}
+                    <a href="/bicycle2" class="list-group-item active">Bicycle 2</a>
+                    {% else %}
+                    <a href="/bicycle2" class="list-group-item">Bicycle 2</a>
+                    {% endif %}
+
+                    {% if name == "bicycle3" %}
+                    <a href="/bicycle3" class="list-group-item active">Bicycle 3</a>
+                    {% else %}
+                    <a href="/bicycle3" class="list-group-item">Bicycle 3</a>
+                    {% endif %}
+
+                    {% if name == "bicycle4" %}
+                    <a href="/bicycle4" class="list-group-item active">Bicycle 4</a>
+                    {% else %}
+                    <a href="/bicycle4" class="list-group-item">Bicycle 4</a>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+
+                <div class="card mt-4">
+                    <img class="item-img" src="{{ url_for('static', filename='item-not-found.gif')}}" alt="">
+                    <div class="card-body">
+                        <h3 class="card-title">N/A</h3>
+                        <h4>-</h4>
+                        <p class="card-text">There is no product description to display.</p>
+                        <span class="text-warning">&#9734; &#9734; &#9734; &#9734; &#9734;</span>
+                        N/A stars
+                    </div>
+                </div>
+                <!-- /.card -->
+
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Product Reviews
+                    </div>
+                    <div class="card-body">
+                        <p>There are no reviews to display.</p>
+                    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+
     </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Matthew Muccio 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../static/jquery/jquery.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

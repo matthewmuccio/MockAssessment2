@@ -1,23 +1,169 @@
-<!--
-    Flask variables
-    name (item name)
-    price (item price)
-    picture (item picture file name)
--->
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Mock Assessment 2 - Item</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Mock Assessment 2 - {{ name }}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 
 <body>
-    <div class="center">
-        <h1>Item</h1>
-        <h2>{{ name }}</h2>
-        <p>{{ price }}</p>
-        <img src="{{ url_for('static', filename=picture) }}" alt="" width="250" height="250">
-        <p><b>Source:</b> {{ picture }}</p>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="">Mock Assessment 2</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://www.matthewmuccio.com" target="_blank">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://www.github.com/matthewmuccio/MockAssessment2" target="_blank">Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="my-4">Matt's Bikes</h1>
+                <div class="list-group">
+                    {% if name == "bicycle" %}
+                    <a href="/bicycle" class="list-group-item active">Bicycle</a>
+                    {% else %}
+                    <a href="/bicycle" class="list-group-item">Bicycle</a>
+                    {% endif %}
+
+                    {% if name == "bicycle1" %}
+                    <a href="/bicycle1" class="list-group-item active">Bicycle 1</a>
+                    {% else %}
+                    <a href="/bicycle1" class="list-group-item">Bicycle 1</a>
+                    {% endif %}
+
+                    {% if name == "bicycle2" %}
+                    <a href="/bicycle2" class="list-group-item active">Bicycle 2</a>
+                    {% else %}
+                    <a href="/bicycle2" class="list-group-item">Bicycle 2</a>
+                    {% endif %}
+
+                    {% if name == "bicycle3" %}
+                    <a href="/bicycle3" class="list-group-item active">Bicycle 3</a>
+                    {% else %}
+                    <a href="/bicycle3" class="list-group-item">Bicycle 3</a>
+                    {% endif %}
+
+                    {% if name == "bicycle4" %}
+                    <a href="/bicycle4" class="list-group-item active">Bicycle 4</a>
+                    {% else %}
+                    <a href="/bicycle4" class="list-group-item">Bicycle 4</a>
+                    {% endif %}
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+
+                <div class="card mt-4">
+                    <!--<img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">-->
+                    <img class="item-img" src="{{ url_for('static', filename=picture)}}" alt="" width="300" height="300">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ name }}</h3>
+                        <h4>{{ price }}</h4>
+                        <p class="card-text">A bicycle, also called a cycle or bike, is a human-powered, pedal-driven, single-track vehicle, 
+                            having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.
+                        </p>
+                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                        4.0 stars
+                    </div>
+                </div>
+                <!-- /.card -->
+
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Product Reviews
+                    </div>
+                    <div class="card-body">
+                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                        5.0 stars
+                        <p>Dear Lord, this bicycle. I wish someone would have told me about this bike sooner, 
+                            because I realized that I have been missing a part of me my entire life. This
+                            bike has opened up doors for me that I never would have thought possible.
+                            Highly recommended!
+                        </p>
+                        <small class="text-muted">Posted by SirBikesALot on 7/18/18</small>
+                        <hr>
+                        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                        5.0 stars
+                        <p>Do not, I repeat, do NOT purchase this bicycle. First of all, when I received my
+                            "bicycle" that I had ordered, I found that it was not a bicycle, but instead
+                            random items including peas, leaves, a rubber duck in a pool, a house in the
+                            mountains, and a racecar. Honestly, never mind. I can sell all this stuff for
+                            way more than the $25 I paid for it. 10/10 would buy again.
+                        </p>
+                        <small class="text-muted">Posted by Anonymous on 7/15/18</small>
+                        <hr>
+                        <span class="text-warning">&#9733; &#9733; &#9734; &#9734; &#9734;</span>
+                        2.0 stars
+                        <p>Wow, I never knew that a bicycle could be so terrible. For $25, I could have
+                            purchased $25 worth of gumballs, or $25 worth of pickles, or maybe even
+                            $25 worth of 25 dollars. I don't know, and I don't care. I should've known
+                            better, buying a bicycle for $25. No one sells bikes for that cheap.
+                            Maybe I was a bit too harsh, some of the blame is on me too. I'll give it
+                            two stars.
+                        </p>
+                        <small class="text-muted">Posted by EmpatheticEmily on 7/7/18</small>
+                        <hr>
+                        <a href="" class="btn btn-success">Leave a Review</a>
+                    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+
     </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Matthew Muccio 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../static/jquery/jquery.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

@@ -21,10 +21,13 @@ def show_item(item_name):
         name = item[1]      # bicycle
         price = item[2]     # $25.00
         picture = item[3]   # photo-1531857475897-48f2102b7566.jpeg
-        return render_template("market-item-index.html", \
+        return render_template("item.html", \
                                 name=name, \
                                 price=price, \
                                 picture=picture)
     # If the item name does not exist in the DB:
     else:
-        return render_template("item-not-found.html")
+        return render_template("item-not-found.html", \
+                                name="name", \
+                                price="price", \
+                                picture="picture")
