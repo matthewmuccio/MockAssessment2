@@ -1,4 +1,4 @@
-# Assessment 2
+# MockAssessment2
 
 Create and deploy an application that serves HTML pages on routes
 delineated in `products.db`; where each HTML page displays its
