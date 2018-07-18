@@ -11,7 +11,7 @@ controller = Blueprint("main", __name__)
 
 @controller.route("/", methods=["GET"])
 def show_index():
-    return render_template("index.html")
+    return render_template("market-home-index.html")
 
 @controller.route("/<item_name>", methods=["GET"])
 def show_item(item_name):
@@ -21,7 +21,7 @@ def show_item(item_name):
         name = item[1]      # bicycle
         price = item[2]     # $25.00
         picture = item[3]   # photo-1531857475897-48f2102b7566.jpeg
-        return render_template("item.html", \
+        return render_template("market-item-index.html", \
                                 name=name, \
                                 price=price, \
                                 picture=picture)
