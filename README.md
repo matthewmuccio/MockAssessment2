@@ -1,5 +1,10 @@
-# MockAssessment2
-
+MockAssessment2
+===============
 Create and deploy an application that serves HTML pages on routes
 delineated in `products.db`; where each HTML page displays its
 respective image along with the name of the product.
+
+Screenshots
+-----------
+Home Page
+![mockassessment-home.png](https://github.com/matthewmuccio/MockAssessment2/raw/master/screenshots/mockassessment-home.png)
