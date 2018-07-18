@@ -16,10 +16,15 @@ def show_index():
 @controller.route("/<item_name>", methods=["GET"])
 def show_item(item_name):
     item = model.get_item_data(item_name)
-    name = item[0]
-    price = item[1]
-    picture = item[2]
-    return render_template("item.html", \
-                            name=name, \
-                            price=price, \
-                            picture=picture)
+    # If the item name exists in the DB:
+    if item:
+        name = item[1]
+        price = item[2]
+        picture = item[3]
+        return render_template("item.html", \
+                                name=name, \
+                                price=price, \
+                                picture=picture)
+    # If the item name does not exist in the DB:
+    else:
+        return render_template("item-not-found.html")
